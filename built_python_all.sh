@@ -20,18 +20,26 @@ fi
 
 echo $CONDAPATH
 
-bash packages/install_anaconda.sh
-bash packages/install_matplotlib-venn.sh
-bash packages/install_cobra.sh
-bash packages/install_rdkit.sh
-bash packages/install_nb_conda_kernels.sh
-bash packages/install_qsopt.sh
-bash packages/install_pyteomics.sh
-bash packages/install_metatlas.sh
-bash packages/install_molvs.sh
-bash packages/install_python-libsbml.sh
-bash packages/install_BASTet.sh
-bash packages/install_pyimzml.sh
+source packages/install_anaconda.shs
+source packages/install_metatlas.sh
+# make sure to cd after these
+
+source packages/install_rdkit.sh
+source packages/install_molvs.sh
+
+source packages/install_matplotlib-venn.sh
+
+source packages/install_pyteomics.sh
+source packages/install_pyimzml.sh
+source packages/install_BASTet.sh
+#make sure to cd after these
+
+#source packages/install_cobra.sh
+#source packages/install_python-libsbml.sh
+#source packages/install_qsopt.sh
+
+#bash packages/install_nb_conda_kernels.sh
+#bash packages/install_setuptools.sh
 #bash packages/install_gspread.sh
 
 chmod -R 755 $CONDAPATH

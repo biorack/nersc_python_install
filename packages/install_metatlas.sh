@@ -28,6 +28,7 @@ cd /global/common/software/m2650/nersc_python_install/metatlas
 # git clone https://github.com/biorack/metatlas.git
 
 git pull
-pip uninstall metatlas
-pip install . --upgrade
+#pip uninstall metatlas
+pip install .
+cd ..
 
