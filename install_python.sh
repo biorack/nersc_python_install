@@ -22,18 +22,24 @@ rm $ANACONDA_SH
 # Activate our conda environment
 source $CONDAPATH/bin/activate
 
+#install pymzml with conda since pip is broken 20171108 for pymzml
+conda config --add channels bioconda
+conda install -y pymzml
 ### Install Metabolite Atlas ###
 # make sure you have already cloned here
 cd /global/common/software/m2650/nersc_python_install/metatlas
 # git clone https://github.com/biorack/metatlas.git
 git pull
-pip uninstall metatlas
-pip install . --upgrade
-cd ..
+#pip uninstall metatlas
+pip install .
 cd $BASEDIR
 
+pip install --disable-pip-version-check ijson
+
+conda install -y -c anaconda pymysql
+
 conda install -y -c https://conda.anaconda.org/rdkit rdkit
-conda install -y molvs
+pip install --disable-pip-version-check molvs
 conda install -y -c conda-forge matplotlib-venn 
 
 pip install --disable-pip-version-check pyteomics
