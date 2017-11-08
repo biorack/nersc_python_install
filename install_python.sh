@@ -32,6 +32,7 @@ cd /global/common/software/m2650/nersc_python_install/metatlas
 git pull
 #pip uninstall metatlas
 pip install .
+cp /global/common/software/m2650/nersc_python_install/metatlas/metatlas/helpers/isotope_dict.pkl /global/common/software/m2650/python-cori/lib/python2.7/site-packages/metatlas/helpers/
 cd $BASEDIR
 
 pip install --disable-pip-version-check ijson
@@ -77,6 +78,11 @@ echo "os.environ['PATH'] = os.environ['PATH']+:"$CONDAPATH"/bin"
 #bash packages/install_nb_conda_kernels.sh
 #bash packages/install_setuptools.sh
 #bash packages/install_gspread.sh
+
+### REINSTALL NUMPY ###
+#RDKIT gets broken by some numpy dependency above, but I do not know which package is breaking it
+pip install -U numpy
+#numpy-1.13.3 seems to work, numpy-1.12.1 does not
 
 chmod -R 755 $CONDAPATH
 
