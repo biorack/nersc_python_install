@@ -24,7 +24,7 @@ source $CONDAPATH/bin/activate
 
 #install pymzml with conda since pip is broken 20171108 for pymzml
 conda config --add channels bioconda
-conda install -y pymzml
+conda install -y pymzml=0.7.8
 ### Install Metabolite Atlas ###
 # make sure you have already cloned here
 cd /global/common/software/m2650/nersc_python_install/metatlas
@@ -83,6 +83,9 @@ echo "os.environ['PATH'] = os.environ['PATH']+:"$CONDAPATH"/bin"
 #RDKIT gets broken by some numpy dependency above, but I do not know which package is breaking it
 pip install -U numpy
 #numpy-1.13.3 seems to work, numpy-1.12.1 does not
+
+pip install jsonpickle
+
 
 chmod -R 755 $CONDAPATH
 
