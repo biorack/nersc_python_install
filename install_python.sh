@@ -36,7 +36,8 @@ cp /global/common/software/m2650/nersc_python_install/metatlas/metatlas/helpers/
 cd $BASEDIR
 
 pip install --disable-pip-version-check ijson
-
+pip install --disable-pip-version-check sortedcontainers
+_
 conda install -y -c anaconda pymysql
 
 conda install -y -c https://conda.anaconda.org/rdkit rdkit
