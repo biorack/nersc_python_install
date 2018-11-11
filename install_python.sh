@@ -86,7 +86,7 @@ pip install -U numpy
 #numpy-1.13.3 seems to work, numpy-1.12.1 does not
 
 pip install jsonpickle
-
+pip install memory_profiler
 
 chmod -R 755 $CONDAPATH
 
