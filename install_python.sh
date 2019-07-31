@@ -25,6 +25,7 @@ source $CONDAPATH/bin/activate
 #install pymzml with conda since pip is broken 20171108 for pymzml
 conda config --add channels bioconda
 conda install -y pymzml=0.7.8
+conda install -c conda-forge ftputil #needed for gnps quickstart
 ### Install Metabolite Atlas ###
 # make sure you have already cloned here
 cd /global/common/software/m2650/nersc_python_install/metatlas
